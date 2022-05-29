@@ -1,1 +1,5 @@
 .pyc
+rpcontacts/__pycache__/main.cpython-38.pyc
+rpcontacts/__pycache__/views.cpython-38.pyc
+rpcontacts/__pycache__/__init__.cpython-38.pyc
+.gitignore
