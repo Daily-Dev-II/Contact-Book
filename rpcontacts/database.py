@@ -34,5 +34,5 @@ def createConnection(databaseName):
             f"Database Error: {connection.lastError().text()}",
         )
         return False
-
+    _createContactsTable()
     return True
