@@ -2,7 +2,7 @@ import sys
 
 from PyQt5.QtWidgets import QApplication
 
-import database.createConnection
+from .database import createConnection
 
 from .views import Window
 
