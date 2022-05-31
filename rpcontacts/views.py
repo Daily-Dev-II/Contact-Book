@@ -30,11 +30,29 @@ class Window(QMainWindow):
         self.setCentralWidget(self.centralWidget)
         self.layout = QHBoxLayout()
         self.centralWidget.setLayout(self.layout)
+<<<<<<< HEAD
         self.contactsModel = ContactsModel()
+=======
+        self.ContactsModel = ContactsModel()
+
+
+
+
+class AddDialog(QDialog):
+    """Add Contact dialog."""
+    def __init__(self, parent=None):
+        """Initializer."""
+        super().__init__(parent=parent)
+        self.setWindowTitle("Add Contact")
+        self.layout = QVBoxLayout()
+        self.setLayout(self.layout)
+        self.data = None
+
+>>>>>>> 5aff5477605c22bcb4bea58f431bf573b10bd582
         self.setupUI()
 
     def setupUI(self):
-        """Setup the main window's GUI."""
+
         # Create the table view widget
         self.table = QTableView()
         self.table.setModel(self.contactsModel.model)
@@ -45,16 +63,15 @@ class Window(QMainWindow):
         self.addButton.clicked.connect(self.openAddDialog)
         self.deleteButton = QPushButton("Delete")
         self.clearAllButton = QPushButton("Clear All")
-        self.editButton = QPushButton("Edit Contacts")
         # Lay out the GUI
         layout = QVBoxLayout()
         layout.addWidget(self.addButton)
         layout.addWidget(self.deleteButton)
-        layout.addWidget(self.editButton)
         layout.addStretch()
         layout.addWidget(self.clearAllButton)
         self.layout.addWidget(self.table)
         self.layout.addLayout(layout)
+<<<<<<< HEAD
 
     def openAddDialog(self):
         """Open the Add Contact dialog."""
@@ -80,6 +97,8 @@ class AddDialog(QDialog):
         self.setupUI()
 
     def setupUI(self):
+=======
+>>>>>>> 5aff5477605c22bcb4bea58f431bf573b10bd582
         """Setup the Add Contact dialog's GUI."""
         # Create line edits for data fields
         self.nameField = QLineEdit()
@@ -105,7 +124,17 @@ class AddDialog(QDialog):
         self.layout.addWidget(self.buttonsBox)
 
 
+<<<<<<< HEAD
 
+=======
+    def openAddDialog(self):
+        """Open the Add Contact dialog."""
+        dialog = AddDialog(self)
+        if dialog.exec() == QDialog.Accepted:
+            self.contactsModel.addContact(dialog.data)
+            self.table.resizeColumnsToContents()
+    
+>>>>>>> 5aff5477605c22bcb4bea58f431bf573b10bd582
 
     def accept(self):
         """Accept the data provided through the dialog."""

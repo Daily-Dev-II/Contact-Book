@@ -1,6 +1,10 @@
+"""This module provides a database connection."""
+
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5.QtSql import QSqlDatabase
 from PyQt5.QtSql import QSqlDatabase, QSqlQuery
+
+
 
 def _createContactsTable():
     """Create the contacts table in the database."""
@@ -16,6 +20,8 @@ def _createContactsTable():
         """
     )
 
+    
+    
 def createConnection(databaseName):
     """Create and open a database connection."""
     connection = QSqlDatabase.addDatabase("QSQLITE")

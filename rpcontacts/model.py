@@ -19,6 +19,10 @@ class ContactsModel:
             tableModel.setHeaderData(columnIndex, Qt.Horizontal, header)
         return tableModel
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 5aff5477605c22bcb4bea58f431bf573b10bd582
 
 
     def addContact(self, data):
@@ -28,4 +32,8 @@ class ContactsModel:
         for column, field in enumerate(data):
             self.model.setData(self.model.index(rows, column + 1), field)
         self.model.submitAll()
+<<<<<<< HEAD
         self.model.select()
+=======
+        self.model.select()
+>>>>>>> 5aff5477605c22bcb4bea58f431bf573b10bd582
