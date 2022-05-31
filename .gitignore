@@ -5,3 +5,4 @@ rpcontacts/__pycache__/__init__.cpython-38.pyc
 .gitignore
 rpcontacts/__pycache__/model.cpython-38.pyc
 rpcontacts/__pycache__/database.cpython-38.pyc
+contacts.sqlite
