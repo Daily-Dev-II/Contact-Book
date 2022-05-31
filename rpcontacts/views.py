@@ -48,14 +48,13 @@ class AddDialog(QDialog):
         self.setupUI()
 
     def setupUI(self):
-
+        """Setup the main window's GUI."""
         # Create the table view widget
         self.table = QTableView()
         self.table.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.table.resizeColumnsToContents()
         # Create buttons
         self.addButton = QPushButton("Add...")
-        self.addButton.clicked.connect(self.openAddDialog)
         self.deleteButton = QPushButton("Delete")
         self.clearAllButton = QPushButton("Clear All")
         # Lay out the GUI
@@ -66,29 +65,6 @@ class AddDialog(QDialog):
         layout.addWidget(self.clearAllButton)
         self.layout.addWidget(self.table)
         self.layout.addLayout(layout)
-        """Setup the Add Contact dialog's GUI."""
-        # Create line edits for data fields
-        self.nameField = QLineEdit()
-        self.nameField.setObjectName("Name")
-        self.jobField = QLineEdit()
-        self.jobField.setObjectName("Job")
-        self.emailField = QLineEdit()
-        self.emailField.setObjectName("Email")
-        # Lay out the data fields
-        layout = QFormLayout()
-        layout.addRow("Name:", self.nameField)
-        layout.addRow("Job:", self.jobField)
-        layout.addRow("Email:", self.emailField)
-        self.layout.addLayout(layout)
-        # Add standard buttons to the dialog and connect them
-        self.buttonsBox = QDialogButtonBox(self)
-        self.buttonsBox.setOrientation(Qt.Horizontal)
-        self.buttonsBox.setStandardButtons(
-            QDialogButtonBox.Ok | QDialogButtonBox.Cancel
-        )
-        self.buttonsBox.accepted.connect(self.accept)
-        self.buttonsBox.rejected.connect(self.reject)
-        self.layout.addWidget(self.buttonsBox)
 
 
     def openAddDialog(self):
